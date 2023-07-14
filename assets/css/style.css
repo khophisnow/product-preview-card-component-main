@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
+
+/* ------------------------------------------------------------------------- */
+/* Custom properties*/
+/* ------------------------------------------------------------------------- */
+:root {
+    /* Primary */
+    --Dark-cyan: 158, 36%, 37%;
+    --Very-Dark-cyan: 158, 36%, 20%;
+    --Cream: 30, 38%, 92%;
+
+    /* Neutral */
+    --Very-dark-blue: 212, 21%, 14%;
+    --Dark-grayish-blue: 228, 12%, 48%;
+    --White: 0, 0%, 100%;
+
+    /* font-families */
+    --Montserrat: 'Montserrat', sans-serif;
+    --Fraunces: 'Fraunces', serif;
+
+    /* font-weight  */
+        /* Montserrat  */
+        --Montserrat-fw-500: 500;
+        --Montserrat-fw-700: 700;
+        /* Fraunces */
+        --Fraunces-fw-700: 700;
+
+    /* letter-spacing  */
+        --letter-spacing-1: 1px;
+        --letter-spacing-2: 2px;
+        --letter-spacing-3: 3px;
+}
+/* ----------------------------------------------------------------------- */
+/* Reset*/
+/* ----------------------------------------------------------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* Utility classes     */
+/* ------------------------------------------------------------------------------ */
+/* background-colors */
+.bg-Dark-cyan{background-color: hsl(var(--Dark-cyan));}
+.bg-Cream{background-color: hsl(var(--Cream));}
+.bg-White{background-color: hsl(var(--White));}
+
+/* colors */
+.text-Dark-cyan{color: hsl(var(--Dark-cyan));}
+.text-Very-dark-blue{color: hsl(var(--Very-dark-blue));}
+.text-Dark-grayish-blue{color: hsl(var(--Dark-grayish-blue));}
+.text-White{color: hsl(var(--White));}
+
+/* font-families */
+.ff-Montserrat{font-family: var(--Montserrat);}
+.ff-Fraunces{font-family: var(--Fraunces);}
+
+/* font-weight  */
+.Montserrat-fw-500{font-weight: var(--Montserrat-fw-500);}
+.Montserrat-fw-700{font-weight: var(--Montserrat-fw-700);}
+.Fraunces-fw-700{font-weight: var(--Fraunces-fw-700)}
+
+/* letter-spacing  */
+.ls-1{letter-spacing:  var(--letter-spacing-1);}
+.ls-2{letter-spacing:  var(--letter-spacing-2);}
+.ls-3{letter-spacing:  var(--letter-spacing-3);}
+
+.uppercase{text-transform: uppercase;}
+
+/* ------------------------------------------------------------------------------ */
+/*Main*/
+/* ------------------------------------------------------------------------------ */
+main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 600px) {
+    main .card{
+        display: grid;
+        grid-template-columns: 50% auto;
+        width: 40em;
+        background-color: hsl(var(--White));
+        border-radius: 20px;
+    }
+    main .card .imgBx img{
+        border-radius: 20px 0 0 20px;
+        width: 100%;
+        height: 100%;
+    }
+    #desktop_view{display: block;}
+    #mobile_view{display: none;}
+}
+@media (max-width: 600px) {
+    main .card{
+        margin: 30px 20px;
+        display: grid;
+        grid-template-rows: auto auto;
+        width: 40em;
+        background-color: hsl(var(--White));
+        border-radius: 20px;
+    }
+    main .card .imgBx img{
+        border-radius: 20px 20px 0 0 ;
+        width: 100%;
+        height: 100%;
+    }
+    #desktop_view{display: none;}
+    #mobile_view{display: block;}
+}
+main .card .content{
+    margin: 40px;
+}
+main .card .content-name{
+    line-height: 1;
+    font-size: 18px;
+    margin-block:  20px;
+}
+main .card .content-description{
+    line-height: 1.5;
+    font-size: 1rem;
+    margin-block:  20px;
+}
+main .card .content-price{
+    margin-block:  20px;
+    display: flex;
+    align-items: center;
+}
+main .card .old_price{
+    font-size: 1.8rem;
+    padding-right: 20px;
+}
+main .card .btn{
+    padding: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+main .card .btn:hover,
+main .card .btn:focus{
+    background-color: hsl(var(--Very-Dark-cyan));
+    cursor: pointer;
+}
+main .card .btn span{
+    padding-inline: 10px;
+}
+
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+  footer .attribution {
+    font-size: 13px;
+    text-align: center;
+    font-family: var(--Montserrat);
+  }
+  footer .attribution a {
+    color: hsl(var(--Dark-cyan));
+  }
+  .footer {
+    position: relative;
+    width: 300px;
+    margin: 0 20px;
+    padding: 20px 0;
+  }
+  .footer .card {
+    position: relative;
+    height: 100px;
+    background-color: hsl(var(--White));
+    display: flex;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  .footer .card .imgBx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.5s ease-in-out;
+  }
+  .footer .card:hover .imgBx {
+    height: 100px;
+    width: 100px;
+    left: -58px;
+    top: calc(50% - 75px);
+  }
+  .footer .card .imgBx img {
+    max-width: 100px;
+    float: right;
+    object-fit: contain;
+    filter: blur(2px);
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out, filter 0.5s linear;
+  }
+  .footer .card:hover .imgBx img {
+    width: 100%;
+    filter: blur(0);
+    filter: grayscale(0%);
+  }
+  .footer .card .content {
+    position: absolute;
+    left: 20px;
+    width: calc(100% - 50px);
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .card .content a#btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: hsl(var(--White));
+    background-color: hsl(var(--Dark-cyan));
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  @media (max-width: 650px) {
+    footer {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer {
+      position: relative;
+      align-items: center;
+    }
+    .footer .card {
+      width: 300px;
+      height: auto;
+      flex-direction: column;
+      background: transparent;
+      margin: -20px 0;
+      box-shadow: none;
+    }
+    .footer .card .imgBx {
+      position: relative;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+    }
+    .footer .card .imgBx,
+    .footer .card:hover .imgBx {
+      width: 80%;
+      height: 200px;
+      top: 100px;
+      left: 16.5%;
+    }
+    .footer .card:hover .imgBx {
+      top: 80px;
+    }
+    .footer .card .imgBx img,
+    .footer .card:hover .imgBx img {
+      max-width: 100%;
+    }
+    .footer .card .content {
+      position: relative;
+      width: 100%;
+      background-color: hsl(var(--White));
+      box-shadow: none;
+      border-radius: 20px;
+      padding: 40px;
+      border-top: 100px solid hsl(var(--White));
+    }
+  }
+  
